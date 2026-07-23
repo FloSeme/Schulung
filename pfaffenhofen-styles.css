@@ -1,0 +1,163 @@
+/* 
+  Design-Variablen: hier ändern, um die ganze Seite umzufärben,
+  ohne irgendwo anders im CSS suchen zu müssen.
+*/
+:root {
+  --color-dark: #0a2c47;
+  --color-dark-light: #1a5c8c;
+  --color-bg: #f0f8ff;
+  --color-text: #0a2c47;
+  --color-muted: #5a7c9c;
+  --font-family: system-ui, sans-serif;
+  --radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.hero {
+  min-height: 75vh;
+  padding: 32px;
+  color: white;
+  /* Hintergrund mit Farbverlauf und simuliertes Pfaffenhofen-Bild */
+  background: 
+    linear-gradient(rgba(10, 44, 71, 0.85), rgba(10, 44, 71, 0.95)),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600"><rect width="800" height="600" fill="%230a2c47"/><path d="M100,300 Q200,250 300,300 T500,300 T700,300" stroke="white" stroke-width="2" fill="none" opacity="0.3"/><circle cx="200" cy="200" r="30" fill="white" opacity="0.2"/><circle cx="600" cy="150" r="40" fill="white" opacity="0.2"/><path d="M150,400 L180,380 L210,400 L240,370 L270,390 L300,360" stroke="white" stroke-width="1" fill="none" opacity="0.3"/><text x="400" y="500" text-anchor="middle" fill="white" opacity="0.4" font-family="Arial" font-size="20">Pfaffenhofen a.d.Ilm</text></svg>') center/cover no-repeat;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 96px;
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.hero section {
+  max-width: 760px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  opacity: 0.75;
+}
+
+h1 {
+  margin: 0 0 24px;
+  font-size: clamp(40px, 8vw, 80px);
+  line-height: 0.95;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  background: #ff6b35;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 0.15s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  background: #e55a2b;
+}
+
+.section {
+  padding: 64px 32px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 64px 32px;
+}
+
+article {
+  background: white;
+  padding: 28px;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(10, 44, 71, 0.15);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+article:hover {
+  transform: translateY(-5px);
+}
+
+footer {
+  padding: 32px;
+  text-align: center;
+  color: var(--color-muted);
+}
+
+@media (max-width: 760px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    margin-bottom: 64px;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 8px;
+    padding: 16px;
+    flex-direction: column;
+    gap: 16px;
+    background: var(--color-dark-light);
+    border-radius: 12px;
+    z-index: 10;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
