@@ -1,0 +1,163 @@
+/* 
+  Design-Variablen: hier ändern, um die ganze Seite umzufärben,
+  ohne irgendwo anders im CSS suchen zu müssen.
+*/
+:root {
+  --color-dark: #8B4513;
+  --color-dark-light: #CD853F;
+  --color-bg: #FFF8DC;
+  --color-text: #8B4513;
+  --color-muted: #A0522D;
+  --font-family: system-ui, sans-serif;
+  --radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.hero {
+  min-height: 75vh;
+  padding: 32px;
+  color: white;
+  /* Hintergrund mit Berglandschaft, Sonnenuntergang und Wasserfall */
+  background: 
+    linear-gradient(rgba(139, 69, 19, 0.7), rgba(139, 69, 19, 0.85)),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600"><defs><radialGradient id="sun" cx="50%" cy="50%" r="50%" fx="50%" fy="50%"><stop offset="0%" stop-color="%23FFA500" stop-opacity="0.9"/><stop offset="100%" stop-color="%23FF4500" stop-opacity="0.8"/></radialGradient><linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="%2387CEEB" stop-opacity="0.7"/><stop offset="100%" stop-color="%23FFA500" stop-opacity="0.9"/></linearGradient></defs><rect width="800" height="600" fill="url(%23sky)"/><circle cx="700" cy="150" r="50" fill="url(%23sun)"/><polygon points="0,600 150,300 300,500 450,250 600,450 750,200 800,350 800,600" fill="%232F4F4F" opacity="0.9"/><polygon points="100,600 250,350 400,500 550,300 700,450 800,250 800,600" fill="%23556B2F" opacity="0.8"/><path d="M50,500 Q100,480 150,500 T250,500 T350,500" fill="%238bc34a" opacity="0.6"/><path d="M400,200 Q410,250 405,300 Q400,350 395,400 Q390,450 385,500 L415,500 Q410,450 415,400 Q420,350 425,300 Q430,250 420,200 Z" fill="%231E90FF" opacity="0.7"/><circle cx="400" cy="200" r="5" fill="%231E90FF" opacity="0.8"/><text x="400" y="550" text-anchor="middle" fill="white" opacity="0.9" font-family="Arial" font-size="20">Berglandschaft mit Wasserfall</text></svg>') center/cover no-repeat;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 96px;
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.hero section {
+  max-width: 760px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  opacity: 0.75;
+}
+
+h1 {
+  margin: 0 0 24px;
+  font-size: clamp(40px, 8vw, 80px);
+  line-height: 0.95;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  background: #ff6b35;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 0.15s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  background: #e55a2b;
+}
+
+.section {
+  padding: 64px 32px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 64px 32px;
+}
+
+article {
+  background: white;
+  padding: 28px;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(139, 69, 19, 0.15);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+article:hover {
+  transform: translateY(-5px);
+}
+
+footer {
+  padding: 32px;
+  text-align: center;
+  color: var(--color-muted);
+}
+
+@media (max-width: 760px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    margin-bottom: 64px;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 8px;
+    padding: 16px;
+    flex-direction: column;
+    gap: 16px;
+    background: var(--color-dark-light);
+    border-radius: 12px;
+    z-index: 10;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
