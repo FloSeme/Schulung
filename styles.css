@@ -3,13 +3,13 @@
   ohne irgendwo anders im CSS suchen zu müssen.
 */
 :root {
-  --color-dark: #111827;
-  --color-dark-light: #334155;
-  --color-bg: #f8fafc;
-  --color-text: #111827;
-  --color-muted: #64748b;
+  --color-dark: #0a2c47;
+  --color-dark-light: #1a5c8c;
+  --color-bg: #f0f8ff;
+  --color-text: #0a2c47;
+  --color-muted: #5a7c9c;
   --font-family: system-ui, sans-serif;
-  --radius: 24px;
+  --radius: 16px;
 }
 
 * {
@@ -82,8 +82,8 @@ h1 {
   margin-top: 24px;
   padding: 14px 22px;
   border-radius: 999px;
-  background: white;
-  color: var(--color-dark);
+  background: #ff6b35;
+  color: white;
   text-decoration: none;
   font-weight: 700;
   transition: transform 0.15s ease;
@@ -91,6 +91,7 @@ h1 {
 
 .button:hover {
   transform: translateY(-2px);
+  background: #e55a2b;
 }
 
 .section {
@@ -110,7 +111,13 @@ article {
   background: white;
   padding: 28px;
   border-radius: var(--radius);
-  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 10px 30px rgba(10, 44, 71, 0.15);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+article:hover {
+  transform: translateY(-5px);
 }
 
 footer {
@@ -151,3 +158,4 @@ footer {
     display: flex;
   }
 }
+
