@@ -3,24 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meine erste KI-Website</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Mannschaft 2027</title>
+    <link rel="stylesheet" href="styles-modified.css" />
   </head>
   <body>
     <!--
       AUFBAU DIESER SEITE (4 Bausteine):
       1. Navigation + Hero   -> ganz oben, großer Einstieg
-      2. Idee-Sektion        -> id="idee", Haupttext
-      3. Feature-Karten      -> id="features", 3 Karten nebeneinander
+      2. Über Uns            -> id="ueber-uns", Haupttext
+      3. Mitglieder          -> id="mitglieder", Team-Mitglieder
       4. Kontakt + Footer    -> id="kontakt", Ende der Seite
 
-      Farben & Schriftart ändern? -> styles.css, ganz oben im Block ":root"
+      Farben & Schriftart ändern? -> styles-modified.css, ganz oben im Block ":root"
     -->
 
     <header class="hero">
       <!-- KOMPONENTE: Navigation. Menüpunkt hinzufügen = <a> hier + passende <section id="..."> unten -->
       <nav>
-        <strong>Meine Website</strong>
+        <strong>Mannschaft 2027</strong>
         <button
           class="mobile-menu-btn"
           aria-label="Menü öffnen"
@@ -29,63 +29,66 @@
           ☰
         </button>
         <div class="nav-links">
-          <a href="#idee">Idee</a>
-          <a href="#features">Features</a>
+          <a href="#ueber-uns">Über Uns</a>
+          <a href="#mitglieder">Mitglieder</a>
           <a href="#kontakt">Kontakt</a>
         </div>
       </nav>
 
       <!-- KOMPONENTE: Hero. Das Erste, was Besucher:innen sehen -->
       <section>
-        <p class="eyebrow">Gebaut im Vibe-Coding-Kurs</p>
-        <h1>Meine erste eigene Website mit KI</h1>
+        <p class="eyebrow">Unsere Vision für die Zukunft</p>
+        <h1>Mannschaft 2027</h1>
         <p>
-          Diese Seite wurde mit VS Code, Continue und GitHub Pages erstellt.
+          Gemeinsam gestalten wir die Herausforderungen von morgen.
         </p>
-        <a class="button" href="#idee">Los geht's</a>
+        <a class="button" href="#ueber-uns">Mehr erfahren</a>
       </section>
     </header>
 
     <main>
-      <!-- KOMPONENTE: Idee-Text. Ein Absatz, der erklärt, worum es auf der Seite geht -->
-      <section id="idee" class="section">
-        <h2>Die Idee</h2>
+      <!-- KOMPONENTE: Über Uns. Beschreibung der Mannschaft -->
+      <section id="ueber-uns" class="section">
+        <h2>Über Uns</h2>
         <p>
-          Hier steht später die Idee für diese Website. Zum Beispiel: ein Café,
-          ein Portfolio, ein kleines Produkt oder eine Event-Seite.
+          Wir sind ein engagiertes Team von Fachkräften, das sich dem Ziel verschrieben hat,
+          innovative Lösungen für die Herausforderungen des Jahres 2027 zu entwickeln.
+          Mit unserem interdisziplinären Ansatz vereinen wir Expertise aus verschiedenen
+          Bereichen, um nachhaltige und zukunftsweisende Projekte zu realisieren.
         </p>
       </section>
 
-      <!-- KOMPONENTE: Feature-Karten. Für eine weitere Karte einfach ein <article>-Block kopieren -->
-      <section id="features" class="cards">
+      <!-- KOMPONENTE: Mitglieder. Team-Mitglieder mit Funktionen -->
+      <section id="mitglieder" class="cards">
         <article>
-          <h3>Schnell gebaut</h3>
-          <p>Wir ändern die Website Schritt für Schritt mit KI-Unterstützung.</p>
+          <h3>Max Mustermann</h3>
+          <p>Projektleiter & Strategie</p>
         </article>
 
         <article>
-          <h3>Einfach gestaltet</h3>
-          <p>HTML und CSS reichen für eine ansehbare erste Website.</p>
+          <h3>Eva Beispiel</h3>
+          <p>Technische Leitung</p>
         </article>
 
         <article>
-          <h3>Online veröffentlicht</h3>
-          <p>GitHub Pages macht aus den Dateien eine öffentliche Website.</p>
+          <h3>Tom Test</h3>
+          <p>Forschung & Entwicklung</p>
         </article>
       </section>
 
       <!-- KOMPONENTE: Kontakt -->
       <section id="kontakt" class="section">
         <h2>Kontakt</h2>
-        <p>Kontakt: hello@example.com</p>
+        <p>Interessiert an einer Zusammenarbeit? Kontaktieren Sie uns unter: kontakt@mannschaft2027.de</p>
       </section>
     </main>
 
     <!-- KOMPONENTE: Footer -->
     <footer>
-      <p>© 2026 Vibe-Coding-Kurs</p>
+      <p>© 2027 Mannschaft 2027. Alle Rechte vorbehalten.</p>
     </footer>
 
     <script src="script.js"></script>
   </body>
 </html>
+
